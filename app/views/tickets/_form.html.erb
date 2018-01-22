@@ -1,0 +1,77 @@
+<%= form_with(model: ticket, local: true) do |form| %>
+  <% if ticket.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(ticket.errors.count, "error") %> prohibited this ticket from being saved:</h2>
+
+      <ul>
+      <% ticket.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :request_number %>
+    <%= form.text_field :request_number, id: :ticket_request_number %>
+  </div>
+
+  <div class="field">
+    <%= form.label :sequence_number %>
+    <%= form.text_field :sequence_number, id: :ticket_sequence_number %>
+  </div>
+
+  <div class="field">
+    <%= form.label :request_type %>
+    <%= form.text_field :request_type, id: :ticket_request_type %>
+  </div>
+
+  <div class="field">
+    <%= form.label :response_due_date_time %>
+    <%= form.text_field :response_due_date_time, id: :ticket_response_due_date_time %>
+  </div>
+
+  <div class="field">
+    <%= form.label :sacode1 %>
+    <%= form.text_field :sacode1, id: :ticket_sacode1 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :sacode2 %>
+    <%= form.text_field :sacode2, id: :ticket_sacode2 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :company_name %>
+    <%= form.text_field :company_name, id: :ticket_company_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :address %>
+    <%= form.text_field :address, id: :ticket_address %>
+  </div>
+
+  <div class="field">
+    <%= form.label :crew_on_site %>
+    <%= form.text_field :crew_on_site, id: :ticket_crew_on_site %>
+  </div>
+
+  <div class="field">
+    <%= form.label :well_know_text %>
+    <%= form.text_field :well_know_text, id: :ticket_well_know_text %>
+  </div>
+
+  <div class="field">
+    <%= form.label :created_at %>
+    <%= form.text_field :created_at, id: :ticket_created_at %>
+  </div>
+
+  <div class="field">
+    <%= form.label :updated_at %>
+    <%= form.text_field :updated_at, id: :ticket_updated_at %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

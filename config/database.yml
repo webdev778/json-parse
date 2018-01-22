@@ -1,0 +1,22 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+development:
+  <<: *default
+  database: ticketapi_development
+  username: postgres
+  password: postgres
+  host: localhost
+  port: 5432
+
+test:
+  <<: *default
+  database: ticketapi_test
+
+production:
+  <<: *default
+  database: ticketapi_production
+  username: ticketapi
+  password: <%= ENV['TICKETAPI_DATABASE_PASSWORD'] %>
