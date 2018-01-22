@@ -1,4 +1,4 @@
-class TicketsController < ApplicationController
+class TicketsController < ViewController
   before_action :set_ticket, only: [:show, :edit, :update, :destroy]
 
   # GET /tickets
